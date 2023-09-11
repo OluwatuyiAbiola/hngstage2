@@ -1,0 +1,43 @@
+GET http://localhost:3000/api/White Man HTTP/1.1
+
+###
+GET http://localhost:3000/api HTTP/1.1
+
+###
+POST http://localhost:3000/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "White Man"
+}
+
+###
+POST http://localhost:3000/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Dane White"
+}
+
+###
+# PUT http://localhost:3000/api/64fefe1eb593d56f529c1720 HTTP/1.1
+# Content-Type: application/json
+
+# {
+    
+#     "name": "Morw Frank",
+# }
+
+
+
+###
+PATCH  http://localhost:3000/api/White Man HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mon Frank"
+}
+
+
+###
+DELETE http://localhost:3000/api/64fefe0db593d56f529c171e HTTP/1.1
