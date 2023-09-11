@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(json());
 app.use("/", routes);
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: true}));
 
 
 app.listen(port, () => {

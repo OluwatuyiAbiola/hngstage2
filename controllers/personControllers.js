@@ -23,8 +23,6 @@ exports.personByIdentifier = async(req, res) => {
   try{
     const {identifier} = req.params;
     let person;
-    const id = mongoose.Types.ObjectId.isValid(identifier);
-    console.log(id);
     
     if (mongoose.Types.ObjectId.isValid(identifier)){
       // if identifier is an id
@@ -68,35 +66,36 @@ exports.addPerson = async (req,res) => {
 /** PUT
  * Update /api/:identifier
  */
-// exports.updateByIdentifier = async(req,res) => {
-//     try{
-//       const {identifier} = await req.params;
-//       const updateFields = await req.body;
-//       let updatePerson;
-//       if (mongoose.Types.ObjectId.isValid(identifier)){
-//         // if identifier is an id
-//         updatePerson = await Person.findByIdAndUpdate(identifier,  {$set: updateFields}, {new: true});
-//       } else {
-//         //if identifier is a name
-//         person = await Person.findOneAndUpdate({name: identifier},  {$set: updateFields}, {new: true});
-//       }
+exports.updateByIdentifier = async(req,res) => {
+    try{
+      const {identifier} = await req.params;
+      const updateFields = await req.body;
+      let updatePerson;
+      if (mongoose.Types.ObjectId.isValid(identifier)){
+        // if identifier is an id
+        updatePerson = await Person.findByIdAndUpdate(identifier,  {$set: updateFields}, {new: true});
+      } else {
+        //if identifier is a name
+        person = await Person.findOneAndUpdate({name: identifier},  {$set: updateFields}, {new: true});
+      }
   
-//       if (!updatePerson){
-//         return res.status(404).json({message: "User not found"});
-//       }
+      // if (!updatePerson){
+      //   return res.status(404).json({message: "User not found"});
+      // }
         
-//       return res.status(200).json({message: "Record updated successful"});
-//     } catch(err){
-//       res.json({message : err});
-//     }
-// }
+      return res.status(200).json({message: "Record updated successful"});
+    } catch(err){
+      res.json({message : err});
+    }
+}
 
 // update or edit a person
 //patch
 exports.updateInfo = async(req,res) => {
     try{
       const {identifier} = await req.params;
-    let changes = await req.body;
+      let changes = await req.body;
+      let updatePerson;
     if (mongoose.Types.ObjectId.isValid(identifier)){
       // if identifier is an id
       updatePerson = await Person.findByIdAndUpdate(identifier,  {$set : changes}, {new : true});
@@ -105,9 +104,9 @@ exports.updateInfo = async(req,res) => {
       person = await Person.findOneAndUpdate({name: identifier},  {$set : changes}, {new : true});
     }
 
-    if (!updatePerson){
-      return res.status(404).json({message: "User not found"});
-    }
+    // if (!updatePerson){
+    //   return res.status(404).json({message: "User not found"});
+    // }
 
     return res.status(200).json({message: "Record updated successful"});
     } catch(err){

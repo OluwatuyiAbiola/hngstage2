@@ -1,9 +1,10 @@
+###get by name
 GET https://hng-stage2-crud.onrender.com/api/David Reece HTTP/1.1
 
-###
+###get by id
 GET https://hng-stage2-crud.onrender.com/api/64fe7a45290da0010a381411 HTTP/1.1
 
-###
+###get all
 GET https://hng-stage2-crud.onrender.com/api HTTP/1.1
 
 ###
@@ -22,25 +23,49 @@ Content-Type: application/json
     "name": "Dane White"
 }
 
-###
-# PUT http://localhost:3000/api/64fefe1eb593d56f529c1720 HTTP/1.1
-# Content-Type: application/json
-
-# {
-    
-#     "name": "Morw Frank",
-# }
-
-
-
-###
-PATCH  https://hng-stage2-crud.onrender.com/64fe7a69290da0010a381413 HTTP/1.1
+###put by id
+PUT  https://hng-stage2-crud.onrender.com/64fe7a69290da0010a381413 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Mon Frank"
+    
+    "name": "Dad Rom"
+}
+
+###put by name
+PUT  https://hng-stage2-crud.onrender.com/Dane White HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "name": "Dune Rom"
+}
+
+###patch by id
+PATCH https://hng-stage2-crud.onrender.com/64fe7a69290da0010a381413 HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "name": "Dad Rom"
+}
+
+###patch by name
+PUT  https://hng-stage2-crud.onrender.com/Dane White HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "name": "Dune Rom"
 }
 
 
-###
+###delete by id
 DELETE https://hng-stage2-crud.onrender.com/api/64fe7b2da7669194c342ab03 HTTP/1.1
+
+###delete by name
+DELETE https://hng-stage2-crud.onrender.com/localhost:3000/api/Dane White HTTP/1.1
+
+
+
+

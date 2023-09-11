@@ -5,11 +5,13 @@
 This is the documentation for the Node.js CRUD API for managing a "person" database
 
 ## Endpoints
+- Server is hosted on Render and Database on mongoDB atlas
+- Live Api endpoint is 
 
 ### Create a Person
 
 - **Method:** POST
-- **Path:** '/api'
+- **Path:** 'https://hng-stage2-crud.onrender.com/api'
 - **Description:** Create a new person record
 - **Request Parameters:** 
     - 'name' (String): name of the person
@@ -29,7 +31,7 @@ This is the documentation for the Node.js CRUD API for managing a "person" datab
 ### Read a Person
 
 - **Method:** GET all
-- **Path:** '/api'
+- **Path:** 'https://hng-stage2-crud.onrender.com/api'
 - **Description:** Get a person from record
 - **Request Parameters:** 
     - 
@@ -50,7 +52,7 @@ This is the documentation for the Node.js CRUD API for managing a "person" datab
         ```
 
 - **Method:** GET specific
-- **Path:** '/api/id' or '/api/name'
+- **Path:** 'https://hng-stage2-crud.onrender.com/api/id' or 'https://hng-stage2-crud.onrender.com/api/name'
 - **Description:** Get a person from record
 - **Request Parameters:** 
     - 
@@ -70,7 +72,7 @@ This is the documentation for the Node.js CRUD API for managing a "person" datab
 ### Update a Person
 
 - **Method:** PUT / PATCH
-- **Path:** '/api/id' or '/api/name'
+- **Path:** 'https://hng-stage2-crud.onrender.com/api/id' or 'https://hng-stage2-crud.onrender.com/api/name'
 - **Description:** Update a specific person from record
 - **Request Parameters:** 
     - 'id' (string): The unique ID of the person
@@ -89,7 +91,7 @@ This is the documentation for the Node.js CRUD API for managing a "person" datab
 ### Delete a Person
 
 - **Method:** Delete
-- **Path:** '/api/id'
+- **Path:** 'https://hng-stage2-crud.onrender.com/api/id' or 'https://hng-stage2-crud.onrender.com/api/name'
 - **Description:** Delete a person from record by Id
 - **Request Parameters:** 
     - 'id' (string): The unique ID of the person to delete     
@@ -140,7 +142,8 @@ This is the documentation for the Node.js CRUD API for managing a "person" datab
 ##### Additional Information
 
 - You can test the api using the test.rest file
-- There is an error in the put operation don't know how to solve so i commented
+- The API uses MongoDB 
+- Authentication and authorization mechanisms are not implemented here. Ensure secure access to your API in real world scenario
 - **Author:** Oluwatuyi Abiola
 
 
