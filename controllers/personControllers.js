@@ -76,12 +76,12 @@ exports.updateByIdentifier = async(req,res) => {
         updatePerson = await Person.findByIdAndUpdate(identifier,  {$set: updateFields}, {new: true});
       } else {
         //if identifier is a name
-        person = await Person.findOneAndUpdate({name: identifier},  {$set: updateFields}, {new: true});
+        updatePerson = await Person.findOneAndUpdate({name: identifier},  {$set: updateFields}, {new: true});
       }
   
-      // if (!updatePerson){
-      //   return res.status(404).json({message: "User not found"});
-      // }
+      if (!updatePerson){
+        return res.status(404).json({message: "User not found"});
+      }
         
       return res.status(200).json({message: "Record updated successful"});
     } catch(err){
@@ -101,12 +101,12 @@ exports.updateInfo = async(req,res) => {
       updatePerson = await Person.findByIdAndUpdate(identifier,  {$set : changes}, {new : true});
     } else {
       //if identifier is a name
-      person = await Person.findOneAndUpdate({name: identifier},  {$set : changes}, {new : true});
+      updatePerson = await Person.findOneAndUpdate({name: identifier},  {$set : changes}, {new : true});
     }
 
-    // if (!updatePerson){
-    //   return res.status(404).json({message: "User not found"});
-    // }
+    if (!updatePerson){
+      return res.status(404).json({message: "User not found"});
+    }
 
     return res.status(200).json({message: "Record updated successful"});
     } catch(err){

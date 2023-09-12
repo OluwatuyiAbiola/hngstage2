@@ -4,9 +4,16 @@
 
 This is the documentation for the Node.js CRUD API for managing a "person" database
 
+# UML Diagram
+- UML Diagram
+<img src="img\UML.drawio.png" alt="Uml diagram">
+- E-R Diagram
+<img src="img\E-R.drawio.png" alt="e-r diagram">
+
 ## Endpoints
 - Server is hosted on Render and Database on mongoDB atlas
-- Live Api endpoint is 
+- Test API using the test.rest file
+- Live Api endpoint is listed below
 
 ### Create a Person
 
