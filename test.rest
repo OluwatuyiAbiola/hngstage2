@@ -64,7 +64,7 @@ Content-Type: application/json
 DELETE https://hng-stage2-crud.onrender.com/api/6500d3bba2a3c86472c5a104 HTTP/1.1
 
 ### delete by name
-DELETE https://hng-stage2-crud.onrender.com/localhost:3000/api/Luke Wave HTTP/1.1
+DELETE https://hng-stage2-crud.onrender.com/api/Luke Wave HTTP/1.1
 
 
 
